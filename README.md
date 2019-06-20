@@ -5,6 +5,7 @@ A`.tfvars` file would exist per cluster.
 
 ### Breakdown
 
+```
 vault_deploy
 |_main.tf
 |_backends.tf
@@ -14,6 +15,7 @@ vault_deploy
 |_terraform.prod_us_secondary_001.tfvars
 |_terraform.prod_eu_primary_001.tfvars
 |_terraform.prod_eu_secondary_001.tfvars
+```
 
 ### Example operation
 
@@ -34,13 +36,12 @@ terraform {
 
 ```
 
-This also requires that all target workspaces start with the same naming convention. Ex: `vault-`
+This also requires that all target workspaces follow a naming convention. Ex: `vault-`
 
 
 2. The operator is required to select the workspace before execution
 
 ```
-$terraform init
 $terraform workspace select <workspace_name>
 ```
 
