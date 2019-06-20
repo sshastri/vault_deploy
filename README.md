@@ -13,21 +13,29 @@ there would be 4 directories.
 ```
 
 Within each directory, the layout of files is:
+```
+|_prod_us_primary_001
+  |_main.tf
+  |_backends.tf
+  |_locals.tf
+  |_variables.tf
+  |_data.tf
+```
 
-**main.tf**
+**main.tf** <br>
  Root module that references a vault module and consul module
 
- **backends.tf**
+ **backends.tf** <br>
  Specifies the remote backend for storing state. For Terraform Cloud or TFE, this file
  would specify the workspace.
 
-**locals.tf**
+**locals.tf** <br>
 Values that vary per vault cluster. These are highly specific to the cluster.
 
-**variables.tf**
+**variables.tf** <br>
 Variables that contain default values and don't change from one cluster to another
 
-**data.tf**
+**data.tf** <br>
 Data resources that need to be sources and referenced
 
 ### Example Operation
