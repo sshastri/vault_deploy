@@ -1,6 +1,6 @@
 module consul_cluster {
   source             = "<CONSUL_MODULE_SOURCE>"
-  cluster_name       = "${local.cluster_name}"
+  cluster_name       = "${var.cluster_name}"
   instance_type      = ""
   ssh_key_name       = ""
   ami_id             = "${data.aws_ami.consul_latest.id}"
@@ -16,7 +16,7 @@ module vault_cluster {
   source             = "<VAULT_MODULE_SOURCE"
   instance_type      = "t2.large"
   ssh_key_name       = ""
-  cluster_name       = "${local.cluster_name}"
+  cluster_name       = "${var.cluster_name}"
   ami_id             = "${data.aws_ami.vault_latest.id}"
   ...
 }
